@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>CRUD</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">        
+    <nav class="navbar navbar-dark">  
+      </nav>            
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/compara">Compara</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/puntos">Puntos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/quiniela">Quiniela</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/paises">Paises</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/estadios">Estadios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/partidos">Partidos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/acceso">Acceso</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/participantes">Participantes</a>
+              </li>
+            </ul>
+          </div>
+        </div>                               
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <% if (user) { %>
+      <div class="container mt-4">
+          
+          <div class="card border-secondary">  
+                <div class="card-header">Editar Registro</div>
+                <div class="card-body">
+                    <form action="/participantes_update2" method="POST">
+                         <input id="Id_participante" name="Id_participante" value="<%= user.Id_participante %>" hidden>
+                        <div class="mb-3">
+                          <label for="Id_folder" class="form-label">GRUPO</label>
+                          <input type="text" class="form-control" id="Id_folder" name="Id_folder" tabindex="1" value="<%= user.Id_folder  %>">                                            
+                        </div>
+                        <div class="mb-3">
+                          <label for="Nombre" class="form-label">NOMBRE</label>
+                          <input type="text" class="form-control" id="Nombre" name="Nombre" tabindex="1" value="<%= user.Nombre  %>">                                            
+                        </div>    
+                        <div class="mb-3">
+                          <label for="Alias" class="form-label">ALIAS</label>
+                          <input type="text" class="form-control" id="Alias" name="Alias" tabindex="1" value="<%= user.Alias  %>">                                            
+                        </div>
+                        <div class="mb-3">
+                          <label for="Contacto" class="form-label">CONTACTO</label>
+                          <input type="text" class="form-control" id="Contacto" name="Contacto" tabindex="1" value="<%= user.Contacto  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Correo" class="form-label">CORREO</label>
+                          <input type="text" class="form-control" id="Correo" name="Correo" tabindex="1" value="<%= user.Correo  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Pass" class="form-label">PASS</label>
+                          <input type="text" class="form-control" id="Pass" name="Pass" tabindex="1" value="<%= user.Pass  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Lugar" class="form-label">LUGAR</label>
+                          <input type="text" class="form-control" id="Lugar" name="Lugar" tabindex="1" value="<%= user.Lugar  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Puntos" class="form-label">Puntos</label>
+                          <input type="text" class="form-control" id="Puntos" name="Puntos" tabindex="1" value="<%= user.Puntos  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Monto" class="form-label">MONTO</label>
+                          <input type="text" class="form-control" id="Monto" name="Monto" tabindex="1" value="<%= user.Monto  %>">                                            
+                        </div>                        
+                        <div class="mb-3">
+                          <label for="Pago" class="form-label">PAGO</label>
+                          <input type="text" class="form-control" id="Pago" name="Pago" tabindex="1" value="<%= user.Pago  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Nivel" class="form-label">NIVEL</label>
+                          <input type="text" class="form-control" id="Nivel" name="Nivel" tabindex="1" value="<%= user.Nivel  %>">                                            
+                        </div>                                                            
+                        <div class="mb-3">
+                          <label for="Ip" class="form-label">IP</label>
+                          <input type="text" class="form-control" id="Ip" name="Ip" tabindex="1" value="<%= user.Ip  %>">                                            
+                        </div>                                                              
+                        <div class="mb-3">
+                          <label for="Estatus" class="form-label">ESTATUS</label>
+                          <input type="text" class="form-control" id="Estatus" name="Estatus" tabindex="1" value="<%= user.Estatus  %>">                                            
+                        </div>         
+                                                                           
+                        <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                        <a href="/participantes2" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>     
+      </div>
+      <% } %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

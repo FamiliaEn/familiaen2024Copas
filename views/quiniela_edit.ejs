@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+ 
+    <link  rel="stylesheet" href="../resources/css/estilo.css" >
+
+    <title>EDITA</title>
+</head>
+<body>
+
+      <% if (user) { %>
+
+        <div class="flex-container">
+
+          <form action="/quiniela_update" method="POST">
+
+            <div class="container text-center">
+
+              <input id="Id" name="Id" value="<%= user.Id %>" hidden>
+              <input id="Id_participante1" name="Id_participante1" value="<%= user.Id_participante %>" hidden>
+
+              <div class="row">
+                <div class="col">
+                  <div class="textinh2"> <%= user.Fecha  %>  </div>
+                </div>
+              </div> 
+
+              <div class="row">
+                <div class="col">
+                  <div class="textinh2"> <%= user.Estadio  %> </div>
+                </div>
+              </div> 
+
+              <div class="row">
+                <div class="col">
+                  <div class="textinh2"> <%= user.Horario  %> </div>
+                </div>
+              </div> 
+
+              <div class="row">
+                <div class="col">
+                  <div class="textin">44 </div> 
+                </div>
+              </div> 
+
+              <div class="row">
+                  <div class="col">
+                    <div class="mb-3">
+                      <div class="textinh2"> <%= user.Local  %> (<%= user.LRanking  %>)</div>                       
+                    </div>   
+                  </div>
+                  <div class="col">
+                    <div class="textinh2"> <%= user.Visitante  %> (<%= user.VRanking  %>)</div>
+                  </div>
+              </div> <!--row -->
+        
+              <div class="row">
+                  <div class="col">
+                       <div class="textin"> <%= user.LRanking  %> </div>  
+                  </div>
+                  <div class="col">
+                    <div class="textin">    55 </div>  
+               </div>
+               <div class="col">
+                <div class="textin">  <%= user.VRanking  %> </div>  
+           </div>
+              </div> <!--row -->
+        
+
+              <div class="row">
+ 
+                  <div class="col">
+                    <div class="textin">66 </div>
+                  </div>
+                  <div class="col">
+                    <img src="../resources/images/Ban/<%= user.ClaveL  %>1.png" class="rounded float-end" alt="..." height="70" width="100">
+                  </div>
+                  <div class="col">
+                    
+                      <div class="textin">1 </div>  
+                      <input type="number" class="grande" id="ML" name="ML" tabindex="1" value="<%= user.ML  %>" min="0" pattern="^[0-9]+">                    
+                    
+                  </div>
+                  <div class="col">
+                    <div class="textin">2 </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="mb-3">        
+                      <div class="textin">1 </div>           
+                      <input type="number" class="grande" id="MV" name="MV" tabindex="2" value="<%= user.MV  %>" min="0" pattern="^[0-9]+">                        
+                    </div>
+                  </div>
+                  <div class="col">
+                    <img src="../resources/images/Ban/<%= user.ClaveV  %>1.png" class="rounded float-end" alt="..." height="70" width="100">
+                  </div>
+                  <div class="col">
+                    <div class="textin">10 </div>
+                  </div>
+
+              </div> <!--row -->
+
+
+              <div class="row">
+                <div class="col">
+                  <div class="textin"> 1 </div>
+                </div>
+              </div> <!--row -->
+                        
+          <div class="row">
+            <div class="col">
+              <div class="textin"> 1 </div>
+            </div>
+          </div> <!--row -->
+
+          <div class="row">
+
+            <div class="col">
+              <div class="textin">2 </div>
+            </div>
+            <div class="col">
+                   <button type="button" class="btn btn-secondary" onclick="sumaL();">	
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                      <path d="M3.544 10.705A.5.5 0 0 0 4 11h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5a.5.5 0 0 0-.082.537z"></path>
+                    </svg>
+                  </button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary" onclick="restaL();">	
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square" viewBox="0 0 16 16">
+                  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"></path>
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="col">
+              <div class="textin">5 </div>
+            </div>
+
+            <div class="col">
+              <div class="textin">6 </div>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary" onclick="sumaV();">	
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                  <path d="M3.544 10.705A.5.5 0 0 0 4 11h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5a.5.5 0 0 0-.082.537z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary" onclick="restaV();">	
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square" viewBox="0 0 16 16">
+                  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"></path>
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="col">
+              <div class="textin">10 </div>
+            </div>
+
+          </div> <!--row -->
+
+          <div class="row">
+            <div class="col">
+              <div class="textin"> 1 </div>
+            </div>
+          </div> <!--row -->
+
+      <div class="row">
+        <div class="col">
+          <div class="textin">1 </div>
+        </div>
+      </div> <!--row -->
+
+      <div class="row">
+
+        <div class="col">
+          <div class="textin">2 </div>
+        </div>
+        <div class="col">
+          <div class="textin">3 </div>
+        </div>
+        <div class="col">
+          <a href="/quinielaC" class="btn btn-primary" >Cancelar</a>
+        </div>
+        <div class="col">
+          <div class="textin">5 </div>
+        </div>
+        <div class="col">
+          <div class="textin">6 </div>
+        </div>
+        <div class="col">
+          <div class="textin">7 </div>
+        </div>
+        <div class="col">
+          <div class="textin">8 </div>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-primary" >Guardar</button>
+        </div>
+        <div class="col">
+          <div class="textin">10 </div>
+        </div>
+        <div class="col">
+          <div class="textin">11 </div>
+        </div>
+
+      </div> <!--row -->
+
+
+  <div class="row">
+    <div class="col">
+      <div class="textin">2 </div>
+    </div>
+  </div> <!--row -->
+
+  <div class="row">
+    <div class="col">
+      <div class="textin">3 </div>
+    </div>
+    <div class="col">
+      <div class="textin">4 </div>
+    </div>
+    <div class="col">
+      <div class="textin">5 </div>
+    </div>
+    <div class="col">
+      <div class="textin">6 </div>
+    </div>
+
+    <div class="col">
+      <div class="textin">7 </div>
+    </div>
+    <div class="col">
+      <div class="textin">8 </div>
+    </div>
+    <div class="col">
+      <div class="textin">9 </div>
+    </div>
+    <div class="col">
+     <!--row  <div class="textinh1">suerte</div>  -->
+    </div>
+    <div class="col">
+      <!--row 
+      <button type="button" class="btn btn-secondary" onclick="getRndInteger();">		  
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
+          <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"></path>
+          <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+        </svg>
+          </button>
+      -->
+    </div>
+
+
+    </div><!--row -->
+  </div>
+    
+  </form>
+  </div> 
+</div>
+
+        </div>
+    
+
+                </div>
+            </div>     
+      </div>
+      <% } %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+
+      <script>
+        function sumaL()
+        {
+            res = document.getElementById("ML");
+            res.value = parseInt(res.value)+1;
+        }
+        
+        function restaL()
+        {
+            res = document.getElementById("ML");
+            res.value = Math.abs(parseInt(res.value)-1);
+        }
+        
+        
+        function sumaV()
+        {
+            res = document.getElementById("MV");
+            res.value = parseInt(res.value)+1;
+        }
+        
+        function restaV()
+        {
+            res = document.getElementById("MV");
+            res.value = Math.abs(parseInt(res.value)-1);
+        }
+        
+        
+        function getRndInteger() {
+          
+          var Loc = <%= user.LRanking  %>;
+          var Vis = <%= user.VRanking  %>;
+
+          var min = 0 ;
+          var max = 3;
+          var minV = 0;
+          var maxV = 3;
+
+          if (Loc < Vis) {
+            max = max + 1;
+          }
+
+          if (Vis < Loc) {
+            maxV = maxV + 1;
+          }
+
+        
+           res = document.getElementById("ML");
+           res.value = Math.floor(Math.random() * (max - min + 1) ) + min;
+           //res.value = <%= user.LRanking  %>;
+           
+        
+           res = document.getElementById("MV");
+           res.value = Math.floor(Math.random() * (maxV - minV + 1) ) + minV;
+        }
+        
+        </script>
+        
+    </body>
+</html>

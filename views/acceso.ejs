@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <link  rel="stylesheet" href="resources/css/ventanas.css" >
+    <script  src="resources/css/script.js"></script>
+    
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/style2.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    
+</head>
+    
+<body>
+
+<div id="back">
+  <div class="backRight"></div>
+  <div class="backLeft"></div>
+</div>
+
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">|
+      <div class="content">
+        <h2>Registro</h2>
+        <form action="/registra_save1" method="POST">
+          <div class="form-group">
+
+            <input type="text" placeholder="Nombre" id="Nombre" name="Nombre" required />
+            <input type="text" placeholder="Usuario" id="Alias" name="Alias" required/>
+            <input type="tel" placeholder="Teléfono" id="Contacto" name="Contacto" onkeypress="return solonumeros(event)" />
+            <input type="email" placeholder="Correo" id="Correo" name="Correo" />
+            <input type="Password" placeholder="Password" id="Pass" name="pass" required/>
+            
+
+            <button type="submit" class="btn-save" tabindex="5">GUARDAR</button>
+            <a href="/" class="btn-save">SALIR</a>
+           
+          </div>
+
+        </form>
+
+        <button id="goLeft" class="btn-save">Acceso</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h2>Acceso</h2>
+
+
+        <form action="/auth" method="POST">
+          <div class="form-group">
+
+            
+            <input type="text" placeholder="Usuario" id="Alias" name="user" required/>
+            <input type="Password" placeholder="Password" id="Pass" name="pass" required/>
+            
+
+            <button type="submit" class="btn-save" tabindex="5">INGRESAR</button>
+            <a href="/" class="btn-save">SALIR</a>
+           
+          </div>
+
+        </form>
+
+        <button id="goRight" class="btn-save">REGISTRAR</button>
+      </div>
+    </div>
+
+
+      </div>
+    </div>
+      </div>
+</div>
+
+</body>
+
+</html>
+
+<script>
+
+  function solonumeros(e){
+    key=e.keyCode || e.which;
+    teclado=String.fromCharCode(key);
+    numeros='0123456789';
+    especiales="8-37-38-46";
+    teclado_especial=false;
+  
+    for(var i in especiales){
+      if(key==especiales[i]){
+          teclado_especial=true;
+      }
+      
+      if(numeros.indexOf(teclado)==-1 && !teclado_especial ){
+      return false;
+      }
+     }
+    }    
+
+  </script>
+
+  
+<% if (typeof alert != "undefined")  { %>
+  <script>
+  Swal.fire({
+    title:'<%= alertTitle %>',
+    text:'<%= alertMessage %>',
+    icon:'<%= alertIcon %>',
+    showConfirmButton: <%= showConfirmButton %>,
+    timer: <%= timer %>
+  }).then(()=>{
+    window.location='/<%= ruta %>'
+  })
+  </script>
+<% } %>

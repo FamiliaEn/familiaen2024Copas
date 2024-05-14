@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+   
+    <link rel="stylesheet" href="resources/css/style2.css">
+    <link  rel="stylesheet" href="resources/css/ventanas.css" >
+
+    <title> COMPARA </title>
+</head>
+<body>
+
+  <% if (login) { %>
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          
+    <nav class="navbar navbar-dark">      
+      </nav>            
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  2024Euro-América
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/calendario">Calendario</a></li>
+                  <li><a class="dropdown-item" href="/ranking">Ranking</a></li>
+                  <li><a class="dropdown-item" href="/paises">Paises</a></li>
+                  <li><a class="dropdown-item" href="/estadios">Estadios</a></li>
+                  <li><a class="dropdown-item" href="/resultados">Resultados</a></li>
+                  <li><a class="dropdown-item" href="/quinielas">Quinielas</a></li>
+                  <li><a class="dropdown-item" href="/guia">Guia</a></li>
+ <!-- 
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/mundiales">Mundiales</a></li>
+                  <li><a class="dropdown-item" href="/musica">Musica</a></li>
+-->                  
+                </ul>
+              </li>
+      
+              <li class="nav-item">
+                <a class="nav-link" href=""> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""> </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="/acceso">Acceso</a>
+              </li>
+    
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Pronosticos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item active" aria-current="page" href="/compara">Compara</a></li>
+                  <li><a class="dropdown-item" href="/puntos">Puntos</a></li>
+                  <li><a class="dropdown-item" href="/quiniela">Quiniela</a></li>
+                </ul>
+              </li>
+     
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/salir">Salir</a>
+              </li>
+              
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="flex-container">
+        <div class="flex-item">
+           <h1>Partidos fase de grupos</h1>    
+        </div>
+
+        <p><%= Alias %></p>
+
+      <div class="Lpzcontainer">
+          <div class="Resultados">
+            <table id="partidosyo" class="table table-bordered table-striped text-center mt-4">
+              <thead>
+                <tr class="text-white" style="background-color:#380b0f;">
+                  <th scope="col">ID1</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">LOCAL</th>
+                  <th scope="col">ML</th>
+                  <th scope="col">MV</th>
+                  <th scope="col">VISITANTE</th>           
+                </tr>
+              </thead>
+            </table>
+           </div>
+
+           <div class="Quiniela">
+            <table id="partidos" class="table table-bordered table-striped text-center mt-4">
+              <thead>
+                <tr class="text-white" style="background-color:rgb(6, 87, 42);">
+                  <th scope="col">ID</th>
+                  <th scope="col">LOCAL</th>
+                  <th scope="col">ML</th>
+                  <th scope="col">MV</th>
+                  <th scope="col">VISITANTE</th>           
+                </tr>
+              </thead>
+            </table>
+           </div>
+
+      </div>
+      
+
+  <%} else { %>
+     <h1><strong><%= Alias %></strong></h1>   
+     <a href="acceso" class="a-login">Ir a Login</a>
+   <% } %>
+      
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>        
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+  <script> 
+
+  $('#partidos').DataTable({    
+    ajax: {
+        url: "/datap",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "Id"},  
+        {'data': 'Local'},
+        {'data': 'ML'},
+        {'data': 'MV'},
+        {'data': 'Visitante'}
+        ],
+    responsive: true,
+    language: {
+            url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json',
+        },
+    pageLength : 20,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+  $('#partidosyo').DataTable({    
+    ajax: {
+        url: "/quiniela_data",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "Id"},        
+        {"data": "Id_P"},  
+        {'data': 'Local'},
+        {'data': 'ML'},
+        {'data': 'MV'},
+        {'data': 'Visitante'}
+        ],
+        columnDefs:
+            [{
+              "targets": 0,
+              "visible": false,
+              "searchable": false
+            }],
+    order: [[1, 'asc']],
+    responsive: true,
+    language: {
+            url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json',
+        },
+    pageLength : 20,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+
+  </script>
+
+</body>
+</html>
