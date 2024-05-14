@@ -1,0 +1,158 @@
+/* ? ----- PORTADA ----- */
+.portada {
+	width: 100%;
+	background: #EFEFEF;
+
+	min-height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: .5s ease-out all;
+}
+
+.portada.oculta {
+	transform: translateY(100%);
+}
+
+.portada .header {
+	margin-bottom: 100px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.portada .header .logotipo {
+	font-size: 50px;
+	font-size: 900;
+	margin-bottom: 20px;
+}
+
+.portada .header .mensaje {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+
+
+/* ? ----- MAIN ----- */
+main {
+	max-width: 1000px;
+	margin: auto;
+	width: 90%;
+	padding: 60px 0;
+	font-size: 18px;
+	line-height: 28px;
+	text-align: left;
+}
+
+
+
+/* ? ----- Cuenta Regresiva ----- */
+#cuenta {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 100px;
+}
+
+.simply-section {
+	background: rgb(143, 110, 110);
+	width: 110px;
+	height: 110px;
+	margin: 0 10px;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.simply-amount {
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.simply-word {
+	font-weight: 300;
+	font-size: 20px;
+}
+
+
+.card{
+	background-color: #FF0000;
+	color:#EFEFEF;
+	padding: 0rem;
+	height: 4rem;
+}
+
+.cards{
+	max-width: 500px;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 1rem;
+}
+
+
+
+.galeria{
+    font-family: 'open sans';
+}
+
+.galeria h1{
+    text-align: center;
+    margin:20px 0 15px 0;
+    font-weight: 300;
+}
+
+.linea{
+    border-top: 5px solid #0077C0;
+    margin-bottom: 40px;
+}
+
+.contenedor-imagenes{
+    display:flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius:3px;
+}
+
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: relative;
+    height:250px;
+    margin-bottom:5px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75)
+}
+.imagen img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+.imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+}
+
+
+.imagen iframe{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+@media (min-width:600px) {
+	.cards{grid-template-columns: repeat(7,1fr);}
+}
+
+@media (min-width:200px) {
+	.cards{grid-template-columns: repeat(7,1fr);}
+}
