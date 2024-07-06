@@ -365,7 +365,7 @@ app.get('/', (req, res)=> {
 	} else {
 		res.render('ranking',{
 			login:false,
-			name:'Debe iniciar sesión',			
+			name:'Debe iniciar sesión ',			
 		});				 
 	}
 	res.end();
