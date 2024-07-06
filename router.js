@@ -147,7 +147,7 @@ router.get('/calendario_data', (req, res)=>{
 })
 
 
-//ruta para enviar los datos en formato json Resultados
+//ruta para enviar los datos en formato json Resultados 
 router.get('/resultados_data', (req, res)=>{     
     conexion.query('SELECT Id,Local,ML,MV,Visitante,date_format(Fecha, "%d-%m-%Y") as Fecha,Horario,Estadio,Estatus FROM partidos WHERE Estatus=1 order by Id',(error, results)=>{
         if(error){
