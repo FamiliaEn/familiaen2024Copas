@@ -358,12 +358,12 @@ app.get('/', (req, res)=> {
 	console.log('Folder Index ',globalfolder);
 
 	if (req.session.loggedin) {
-		res.render('resultados',{
+		res.render('ranking',{
 			login: true,
 			name: req.session.name			
 		});		
 	} else {
-		res.render('resultados',{
+		res.render('ranking',{
 			login:false,
 			name:'Debe iniciar sesión',			
 		});				 
