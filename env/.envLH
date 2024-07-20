@@ -1,4 +1,4 @@
-//Definimos las variables de entorno para la conexion a la BD heroku
+//Definimos las variables de entorno para la conexion a la BD localhost
 
 DB_HOST = localhost
 DB_USER = usr01

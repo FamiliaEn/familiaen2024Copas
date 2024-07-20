@@ -1,0 +1,6 @@
+//Definimos las variables de entorno para la conexion a la BD Gator
+
+DB_HOST = 50.6.138.161
+DB_USER = mifamili_usu1
+DB_PASS = r7ma7GB2iez9CcZ
+DB_DATABASE = mifamili_2024
